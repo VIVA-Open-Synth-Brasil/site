@@ -3,7 +3,7 @@ export const SITE = {
   shortName: 'VIVA',
   meaning: 'Voz, Inovação, Virtualidade e Arte',
   descriptor: 'Comunidade brasileira de síntese vocal e software livre',
-  description: 'Comunidade brasileira de síntese vocal e software livre.',
+  description: 'Comunidade brasileira de vocal synth e síntese vocal de código aberto. Descubra ferramentas, voicebanks, tutoriais, OpenUtau, UTAU e DiffSinger.',
   url: 'https://viva-open-synth-brasil.pages.dev',
   locale: 'pt-BR'
 };

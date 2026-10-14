@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPublishedPosts, formatDate } from '../utils/content';
+interface Props { section: string; title: string; description: string; }
+const { section, title, description } = Astro.props;
+const posts = (await getPublishedPosts()).filter((post) => post.data.section === section);
+---
+<BaseLayout title={`${title} · VIVA Open Synth Brasil`} description={description}><div class="container page-head"><span class="eyebrow">Biblioteca VIVA</span><h1>{title}</h1><p>{description}</p></div><section class="section"><div class="container"><div class="post-grid">{posts.map((post) => <article class="post-card"><div class="card-art"><span class="eyebrow">{post.data.category}</span></div><div class="card-body"><span class="meta">{formatDate(post.data.pubDate)}</span><h3><a href={`/${post.data.section}/${post.slug}/`}>{post.data.title}</a></h3><p>{post.data.description}</p><a class="read-more" href={`/${post.data.section}/${post.slug}/`}>Ler artigo →</a></div></article>)}</div></div></section></BaseLayout>

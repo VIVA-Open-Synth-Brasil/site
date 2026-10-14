@@ -8,7 +8,8 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     tags: z.array(z.string()).default([]),
-    category: z.enum(['Notícias', 'Guias', 'Recursos', 'Projetos']),
+    category: z.enum(['Notícias', 'Guias', 'Recursos', 'Projetos', 'Enciclopédia', 'Ferramentas', 'Comunidade', 'Desenvolvimento']),
+    section: z.enum(['artigos', 'guias', 'enciclopedia', 'ferramentas', 'comunidade', 'desenvolvimento']).default('artigos'),
     author: z.string().default('VIVA Open Synth Brasil'),
     heroImage: z.string().optional(),
     draft: z.boolean().default(false)
