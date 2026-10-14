@@ -4,6 +4,7 @@ description: "Conheça o OpenUtau e os conceitos essenciais para começar a expe
 pubDate: 2026-08-27T15:13:00-04:00
 tags: ["OpenUtau", "UTAU", "Guia"]
 category: "Guias"
+section: "guias"
 author: "xiao"
 authorUrl: "https://vsynthbr.fandom.com/pt-br/wiki/Categoria:Xiaop"
 heroImage: "/images/articles/openutau.svg"

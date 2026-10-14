@@ -6,7 +6,7 @@ const { title, description, slug, category, pubDate, image, imageAlt = title, hr
 ---
 <article class="dashboard-article-card">
   {image && <a class="dashboard-card-image" data-astro-prefetch="hover" href={href} aria-label={`Abrir ${title}`}><img src={image} alt={imageAlt} loading="lazy" /></a>}
-  <div class="dashboard-card-top"><span class="eyebrow"><img class="inline-icon" src="/icons/flaticon/book.svg" alt="" aria-hidden="true" />{category}</span><Badge tone="blue">{status}</Badge></div>
+  <div class="dashboard-card-top"><span class="eyebrow"><img class="inline-icon" src="/icons/flaticon/book.svg" alt="" aria-hidden="true" />{category}</span><Badge tone="primary">{status}</Badge></div>
   <p class="dashboard-date">{formatDate(pubDate)}</p>
   <h3><a data-astro-prefetch="hover" href={href}>{title}</a></h3>
   <p>{description}</p>

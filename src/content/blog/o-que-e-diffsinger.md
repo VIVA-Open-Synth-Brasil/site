@@ -4,6 +4,7 @@ description: "Uma explicação acessível sobre modelos, dados e o lugar do Diff
 pubDate: 2026-09-02T14:26:00-04:00
 tags: ["DiffSinger", "Síntese neural", "Tecnologia"]
 category: "Notícias"
+section: "guias"
 author: "xiao"
 authorUrl: "https://vsynthbr.fandom.com/pt-br/wiki/Categoria:Xiaop"
 heroImage: "/images/articles/diffsinger.svg"
