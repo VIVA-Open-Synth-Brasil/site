@@ -1,4 +1,4 @@
-# VIVA ::: Open Synth Brasil
+# VIVA Open Synth Brasil
 
 Blog em português sobre software livre, síntese de voz e criação vocal digital.
 
