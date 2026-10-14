@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedPosts } from '../../utils/content';
+const posts = await getPublishedPosts();
+---
+<BaseLayout title="Buscar — Voz Livre Brasil" description="Busque artigos no Voz Livre Brasil."><div class="container page-head"><span class="eyebrow">Encontre uma publicação</span><h1>Buscar</h1><p>Pesquise por título, categoria ou tecnologia.</p><form class="search-box" role="search"><label class="sr-only" for="q">Buscar</label><input id="q" name="q" type="search" placeholder="Ex.: DiffSinger" autocomplete="off" /><button class="button" type="submit">Buscar</button></form><div id="results" class="post-grid"></div></div></BaseLayout><script define:vars={{ posts: posts.map(({ id, data }) => ({ id, title:data.title, description:data.description, tags:data.tags, category:data.category })) }}>
+  const form = document.querySelector('form'); const input = document.querySelector('#q'); const results = document.querySelector('#results');
+  function render(){ const q = input.value.toLowerCase().trim(); const found = posts.filter(p => !q || [p.title,p.description,p.category,...p.tags].join(' ').toLowerCase().includes(q)); results.innerHTML = found.map(p => `<article class="resource"><span class="eyebrow">${p.category}</span><h3><a href="/artigos/${p.id}/">${p.title}</a></h3><p>${p.description}</p></article>`).join('') || '<p>Nenhum artigo encontrado.</p>'; }
+  form.addEventListener('submit', (event) => { event.preventDefault(); render(); }); input.addEventListener('input', render); render();
+</script>

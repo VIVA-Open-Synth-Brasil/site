@@ -1,0 +1,54 @@
+---
+import { SITE } from '../data/site';
+import '../styles/global.css';
+interface Props { title?: string; description?: string; image?: string; type?: 'website' | 'article'; }
+const { title = SITE.name, description = SITE.description, image = '/og-default.svg', type = 'website' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, SITE.url).toString();
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title={SITE.name} href="/rss.xml" />
+    <title>{title}</title>
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(image, SITE.url).toString()} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, SITE.url).toString()} />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="/" aria-label="Voz Livre Brasil, página inicial"><span class="brand-mark">VL</span><span>Voz Livre <em>Brasil</em></span></a>
+        <nav aria-label="Navegação principal">
+          <a href="/artigos/">Artigos</a>
+          <a href="/recursos/">Recursos</a>
+          <a href="/projetos/">Projetos</a>
+          <a href="/sobre/">Sobre</a>
+        </nav>
+        <a class="nav-search" href="/buscar/" aria-label="Buscar artigos">⌕</a>
+      </div>
+    </header>
+    <main id="conteudo"><slot /></main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div><a class="brand" href="/"><span class="brand-mark">VL</span><span>Voz Livre <em>Brasil</em></span></a><p>Conhecimento aberto para quem cria, pesquisa e experimenta com vozes digitais.</p></div>
+        <div><h2>Explore</h2><a href="/artigos/">Todos os artigos</a><a href="/recursos/">Recursos</a><a href="/projetos/">Projetos</a></div>
+        <div><h2>Conecte-se</h2><a href="/contato/">Contato</a><a href="/rss.xml">RSS</a><a href="https://github.com/" rel="me">GitHub</a></div>
+      </div>
+      <div class="container footer-bottom"><span>© 2026 Voz Livre Brasil</span><span>Feito com software livre.</span></div>
+    </footer>
+  </body>
+</html>
