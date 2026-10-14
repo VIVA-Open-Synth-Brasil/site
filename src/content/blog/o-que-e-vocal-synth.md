@@ -9,14 +9,35 @@ author: "VIVA Open Synth Brasil"
 draft: false
 ---
 
-Vocal synth é o nome dado a ferramentas que transformam notas, letras e dados de interpretação em uma voz cantada. O resultado pode ser criado com amostras, regras, modelos neurais ou uma combinação dessas técnicas.
+Se você já ouviu uma voz cantando uma melodia impossível ou percebeu que uma música parecia ter sido interpretada por um personagem, provavelmente encontrou um **vocal synth**. O termo descreve ferramentas capazes de transformar uma sequência musical e uma letra em uma performance vocal sintetizada.
 
-## Os conceitos essenciais
+Isso não significa apertar um botão e receber uma cantora pronta. O resultado nasce de várias camadas: notas, duração, letra, pronúncia, banco de voz, dinâmica e edição de pitch. Quanto melhor entendemos essa cadeia, mais fácil fica corrigir um erro sem culpar a ferramenta inteira.
 
-Um projeto vocal normalmente reúne uma sequência musical, uma letra, fonemas e um voicebank. O editor organiza esses dados e o motor de síntese produz o áudio.
+## O que entra em um projeto
 
-## Por onde começar
+Um projeto costuma reunir quatro informações principais:
 
-OpenUtau e UTAU são bons pontos de entrada para conhecer o fluxo de edição. Comece com uma frase curta, observe a pronúncia e compare as mudanças feitas em cada renderização.
+1. **Música**, com notas, tempo, compasso e duração.
+2. **Texto**, que será convertido em sons cantáveis.
+3. **Fonemas**, que descrevem a pronúncia de cada sílaba.
+4. **Uma voz**, fornecida por amostras ou por um modelo treinado.
 
-O mais importante é entender o processo e respeitar a licença de cada banco, modelo e ferramenta utilizada.
+O editor organiza esses dados e o motor de síntese os converte em áudio. Em sistemas tradicionais, o motor combina amostras gravadas e ajusta seu tempo e seu tom. Em sistemas neurais, um modelo aprende a produzir características acústicas a partir de dados de voz e de uma representação musical.
+
+## Voicebank não é personagem
+
+Um voicebank é o material técnico que representa uma voz dentro do sintetizador. Ele pode vir acompanhado de um personagem, uma história e uma comunidade, mas o personagem e os arquivos de áudio são coisas diferentes. A licença do banco também pode impor regras para uso comercial, redistribuição ou treinamento de outros modelos.
+
+Por isso, antes de baixar ou publicar uma música, procure a licença e as instruções do criador. A cultura do vocal synth funciona melhor quando a autoria da voz, do arranjo e das ferramentas fica visível.
+
+## Um primeiro experimento
+
+Uma boa porta de entrada é instalar o [OpenUtau](https://github.com/openutau/OpenUtau), criar um projeto pequeno e testar uma única frase. Escolha um voicebank, escreva uma melodia simples e observe como os fonemas aparecem. Depois altere apenas uma coisa de cada vez: duração da nota, intensidade, pitch ou phonemizer.
+
+Não tente começar por uma música inteira. Uma frase de dez segundos ensina muito mais quando você consegue comparar cinco versões dela.
+
+## Dois caminhos que se encontram
+
+UTAU e OpenUtau valorizam edição detalhada, voicebanks e phonemizers. DiffSinger representa uma linha de síntese neural que usa modelos treinados e pode exigir outros arquivos, vocoders e recursos de hardware. Eles não são apenas versões diferentes do mesmo sistema, mas podem aparecer no mesmo fluxo de criação.
+
+O melhor vocal synth é aquele que ajuda você a ouvir uma ideia e descobrir como melhorá-la. A técnica vem com a prática, e a comunidade é parte importante desse aprendizado.
