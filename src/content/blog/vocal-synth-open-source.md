@@ -1,11 +1,17 @@
 ---
 title: "Vocal synth open source: ferramentas gratuitas para começar"
 description: "Conheça ferramentas gratuitas e abertas para experimentar síntese vocal, edição cantada e criação de voicebanks."
-pubDate: 2026-10-19
+pubDate: 2026-09-29T17:06:00-04:00
 tags: ["Open Source", "Ferramentas", "Vocal Synth"]
 category: "Ferramentas"
 section: "ferramentas"
-author: "VIVA Open Synth Brasil"
+author: "xiao"
+authorUrl: "https://vsynthbr.fandom.com/pt-br/wiki/Categoria:Xiaop"
+heroImage: "/images/articles/open-source.svg"
+heroAlt: "Mapa visual do ecossistema open source de vocal synth"
+heroCaption: "Editar, sintetizar, tratar áudio e compartilhar conhecimento são partes conectadas do processo."
+heroCredit: "Diagrama original do VIVA Open Synth Brasil"
+heroLicense: "Uso livre no contexto do VIVA"
 draft: false
 ---
 
@@ -29,9 +35,9 @@ Pergunte primeiro:
 
 - Quero editar ou treinar?
 - A voz já existe ou preciso criar um banco?
-- Meu projeto precisa rodar em Windows, macOS ou Linux?
+- Meu projeto precisa rodar em [Windows](https://pt.wikipedia.org/wiki/Microsoft_Windows), [macOS](https://pt.wikipedia.org/wiki/MacOS) ou [Linux](https://pt.wikipedia.org/wiki/Linux)?
 - A licença permite o uso que imagino?
-- Tenho tempo e hardware para configurar dependências?
+- Tenho tempo e [hardware](https://pt.wikipedia.org/wiki/Hardware) para configurar dependências?
 
 Se você está começando, escolha uma ferramenta com documentação e uma comunidade acessível. Uma instalação que funciona e permite aprender é mais valiosa do que uma lista enorme de recursos que você ainda não consegue testar.
 

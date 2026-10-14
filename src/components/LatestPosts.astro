@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate } from '../utils/content';
+
+interface Props { posts: CollectionEntry<'blog'>[]; }
+const { posts } = Astro.props;
+---
+{posts.length > 0 && <section class="latest-posts" aria-labelledby="latest-posts-title">
+  <div class="latest-posts-heading">
+    <div><span class="eyebrow">Arquivo / novidades</span><h2 id="latest-posts-title">Últimos 5 posts</h2></div>
+    <a class="panel-link" data-astro-prefetch="hover" href="/artigos/">Ver todos <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="latest-posts-list">
+    {posts.map((post) => <a class="latest-post" data-astro-prefetch="hover" href={`/artigos/${post.slug}/`}>
+      <span class="latest-post-date"><time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time><span>{post.data.category}</span></span>
+      <strong>{post.data.title}</strong>
+      <span class="latest-post-arrow" aria-hidden="true">↗</span>
+    </a>)}
+  </div>
+</section>}

@@ -1,0 +1,28 @@
+---
+interface NavItem { href: string; label: string; key: string; icon: string; }
+interface SearchPost { slug: string; title: string; description: string; category: string; tags: string[]; }
+interface Props { items: NavItem[]; currentPath: string; searchPosts: SearchPost[]; }
+const { items, currentPath, searchPosts } = Astro.props;
+---
+<header class="site-header">
+  <div class="container topbar">
+    <details class="mobile-menu">
+      <summary aria-label="Abrir navegação"><span aria-hidden="true">☰</span><span class="sr-only">Menu</span></summary>
+      <nav aria-label="Navegação móvel">
+        {items.map((item) => <a data-astro-prefetch="hover" href={item.href} aria-current={currentPath === item.key ? 'page' : undefined}>{item.label}</a>)}
+      </nav>
+    </details>
+    <a class="topbar-mobile-brand" data-astro-prefetch="hover" href="/" aria-label="VIVA Open Synth Brasil, página inicial"><span class="brand"><span class="brand-mark">VIVA :::</span><span>Open Synth Brasil</span></span></a>
+    <span class="topbar-path">viva://{currentPath === '/' ? 'início' : currentPath.replace(/^\//, '').replace(/\/$/, '')}</span>
+    <form class="topbar-search-form" action="/buscar/" method="get" role="search">
+      <label class="sr-only" for="topbar-search">Buscar no VIVA</label>
+      <span aria-hidden="true">⌕</span>
+      <input id="topbar-search" name="q" type="search" placeholder="Buscar no VIVA" />
+      <div class="topbar-search-results" data-topbar-results role="listbox" aria-label="Resultados da busca" hidden>
+        {searchPosts.map((post) => <a class="topbar-result" data-search-item data-search-text={[post.title, post.description, post.category, ...post.tags].join(' ').toLowerCase()} data-astro-prefetch="hover" href={`/artigos/${post.slug}/`} role="option"><strong>{post.title}</strong><span>{post.category}</span></a>)}
+        <span class="topbar-search-empty" data-search-empty hidden>Nenhum artigo encontrado.</span>
+      </div>
+    </form>
+    <span class="topbar-status"><i aria-hidden="true"></i> rede do estúdio ativa</span>
+  </div>
+</header>

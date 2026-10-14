@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getPublishedPosts, formatDate } from '../../utils/content';
+import { getPublishedPosts, formatDate, tagToSlug } from '../../utils/content';
 const posts = await getPublishedPosts();
 ---
 <BaseLayout title="Artigos · VIVA Open Synth Brasil" description="Notícias, análises e guias sobre software livre e síntese de voz.">
   <div class="container page-head"><span class="eyebrow">Arquivo editorial</span><h1>Artigos</h1><p>Novidades, explicações e caminhos para explorar ferramentas abertas de voz.</p></div>
-  <section class="section"><div class="container"><div class="post-grid">{posts.map((post) => <article class="post-card"><div class="card-art"><span class="eyebrow">{post.data.category}</span></div><div class="card-body"><span class="meta">{formatDate(post.data.pubDate)}</span><h3><a href={`/artigos/${post.slug}/`}>{post.data.title}</a></h3><p>{post.data.description}</p><div>{post.data.tags.map((tag) => <span class="tag">{tag}</span>)}</div><a class="read-more" href={`/artigos/${post.slug}/`}>Ler artigo →</a></div></article>)}</div></div></section>
+  <section class="section"><div class="container"><div class="post-grid">{posts.map((post) => <article class="post-card">{post.data.heroImage && <a class="post-card-image" data-astro-prefetch="hover" href={`/artigos/${post.slug}/`} aria-label={`Abrir ${post.data.title}`}><img src={post.data.heroImage} alt={post.data.heroAlt ?? post.data.title} loading="lazy" /></a>}<div class="card-body"><span class="meta">{formatDate(post.data.pubDate)} · {post.data.category}</span><h3><a data-astro-prefetch="hover" href={`/artigos/${post.slug}/`}>{post.data.title}</a></h3><p>{post.data.description}</p><nav class="card-tags" aria-label={`Tags de ${post.data.title}`}>{post.data.tags.map((tag) => <a class="tag" href={`/tags/${tagToSlug(tag)}/`}>{tag}</a>)}</nav><a class="read-more" data-astro-prefetch="hover" href={`/artigos/${post.slug}/`}>Ler artigo →</a></div></article>)}</div></div></section>
 </BaseLayout>

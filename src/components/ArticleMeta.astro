@@ -1,0 +1,13 @@
+---
+import { formatDate } from '../utils/content';
+import { tagToSlug } from '../utils/content';
+interface Props { category: string; pubDate: Date; updatedDate?: Date; tags: string[]; author: string; authorUrl?: string; }
+const { category, pubDate, updatedDate, tags, author, authorUrl } = Astro.props;
+---
+<div class="article-meta-panel">
+  <div class="article-meta-row"><span>seção</span><strong>{category}</strong></div>
+  <div class="article-meta-row"><span>publicado</span><strong>{formatDate(pubDate)}</strong></div>
+  {updatedDate && <div class="article-meta-row"><span>atualizado</span><strong>{formatDate(updatedDate)}</strong></div>}
+  <div class="article-meta-row"><span>autor</span><strong>{authorUrl ? <a href={authorUrl} target="_blank" rel="noopener noreferrer">{author}</a> : author}</strong></div>
+  <nav class="article-tags" aria-label="Tags do artigo">{tags.map((tag) => <a class="tag" href={`/tags/${tagToSlug(tag)}/`}>{tag}</a>)}</nav>
+</div>

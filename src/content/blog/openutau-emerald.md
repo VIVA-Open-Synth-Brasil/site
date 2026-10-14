@@ -1,11 +1,18 @@
 ---
 title: "OpenUtau Emerald: conheça o fork UtauV do projeto Emerald"
 description: "Uma introdução ao OpenUtau Emerald, conhecido publicamente como UtauV, e ao ecossistema de voicebanks do projeto Emerald."
-pubDate: 2026-10-22
+pubDate: 2026-10-07T11:54:00-04:00
 tags: ["OpenUtau Emerald", "UtauV", "Emerald", "UTAU"]
 category: "Projetos"
 section: "enciclopedia"
-author: "VIVA Open Synth Brasil"
+author: "xiao"
+authorUrl: "https://vsynthbr.fandom.com/pt-br/wiki/Categoria:Xiaop"
+heroImage: "/images/articles/emerald.svg"
+heroAlt: "Diagrama do ecossistema Emerald com UtauV, voicebanks e comunidade"
+heroCaption: "Editor, voicebanks, configuração e comunidade formam camadas diferentes do ecossistema Emerald."
+heroSource: "https://github.com/emeraldsingers/UtauV"
+heroCredit: "Diagrama original do VIVA; referência do projeto UtauV"
+heroLicense: "Diagrama original do VIVA"
 draft: false
 ---
 
@@ -17,7 +24,7 @@ O [UtauV](https://github.com/emeraldsingers/UtauV) é o aplicativo. As vozes, pe
 
 ## O que caracteriza o UtauV
 
-As releases públicas do UtauV listam versões para Windows, macOS e Linux. Os pacotes para Windows incluem opções DirectML e CUDA em determinados cenários, enquanto as versões para macOS e Linux seguem requisitos próprios. CUDA exige uma configuração específica de GPU e bibliotecas, por isso não é automaticamente a melhor escolha para todo mundo.
+As releases públicas do UtauV listam versões para [Windows](https://pt.wikipedia.org/wiki/Microsoft_Windows), [macOS](https://pt.wikipedia.org/wiki/MacOS) e [Linux](https://pt.wikipedia.org/wiki/Linux). Os pacotes para Windows incluem opções [DirectML](https://learn.microsoft.com/pt-br/windows/ai/directml/dml) e [CUDA](https://pt.wikipedia.org/wiki/CUDA) em determinados cenários, enquanto as versões para macOS e Linux seguem requisitos próprios. CUDA exige uma configuração específica de [GPU](https://pt.wikipedia.org/wiki/Unidade_de_processamento_gr%C3%A1fico) e bibliotecas, por isso não é automaticamente a melhor escolha para todo mundo.
 
 Para quem usa voicebanks do Emerald, um fork com distribuição próxima ao projeto pode facilitar testes e compatibilidade. Ainda assim, o resultado depende do cantor, do phonemizer, do renderizador e do sistema operacional. Nenhum fork elimina a necessidade de ler a documentação da voz.
 

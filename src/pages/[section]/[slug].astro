@@ -1,13 +1,15 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { formatDate } from '../../utils/content';
+import ArticleMeta from '../../components/ArticleMeta.astro';
+import ArticleFigure from '../../components/ArticleFigure.astro';
+import LatestPosts from '../../components/LatestPosts.astro';
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft && data.section !== 'artigos');
-  return posts.map((post) => ({ params: { section: post.data.section, slug: post.slug }, props: { post } }));
+  return posts.map((post) => ({ params: { section: post.data.section, slug: post.slug }, props: { post, latestPosts: posts.filter((item) => item.id !== post.id).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 5) } }));
 }
-const { post } = Astro.props;
+const { post, latestPosts } = Astro.props;
 const { Content } = await render(post);
-const { title, description, pubDate, updatedDate, tags, category, author } = post.data;
+const { title, description, pubDate, updatedDate, tags, category, author, authorUrl, section, heroImage, heroAlt, heroCaption, heroSource, heroCredit, heroLicense } = post.data;
 ---
-<BaseLayout title={`${title} · VIVA Open Synth Brasil`} description={description} type="article"><article class="article"><header class="article-header"><span class="eyebrow">{category} · {formatDate(pubDate)}</span><h1>{title}</h1><p class="lead">{description}</p><p class="meta">Por {author}{updatedDate ? ` · Atualizado em ${formatDate(updatedDate)}` : ''}</p><div>{tags.map((tag) => <span class="tag">{tag}</span>)}</div></header><div class="article-content"><Content /></div></article><script type="application/ld+json" set:html={JSON.stringify({ '@context':'https://schema.org', '@type':'Article', headline:title, description, datePublished:pubDate.toISOString(), author:{'@type':'Person',name:author} })} /></BaseLayout>
+<BaseLayout title={`${title} · VIVA Open Synth Brasil`} description={description} image={heroImage ?? '/og-default.svg'} type="article"><article class="article"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Início</a><span>/</span><a href={`/${section}/`}>{section}</a><span>/</span><span aria-current="page">{title}</span></nav><header class="article-header"><span class="eyebrow">{category}</span><h1>{title}</h1><p class="lead">{description}</p><ArticleMeta category={category} pubDate={pubDate} updatedDate={updatedDate} tags={tags} author={author} authorUrl={authorUrl} /></header>{heroImage && <ArticleFigure src={heroImage} alt={heroAlt ?? title} caption={heroCaption ?? description} source={heroSource} credit={heroCredit} license={heroLicense} />}<div class="article-content"><Content /></div><LatestPosts posts={latestPosts} /></article><script type="application/ld+json" set:html={JSON.stringify({ '@context':'https://schema.org', '@type':'Article', headline:title, description, datePublished:pubDate.toISOString(), image: heroImage ? new URL(heroImage, Astro.site ?? Astro.url).toString() : undefined, author:{'@type':'Person',name:author,url:authorUrl} })} /></BaseLayout>

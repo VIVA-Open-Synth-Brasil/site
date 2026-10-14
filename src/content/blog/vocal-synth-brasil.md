@@ -1,11 +1,17 @@
 ---
 title: "Vocal synth no Brasil: projetos, artistas e comunidade"
 description: "Um ponto de encontro para descobrir projetos brasileiros, voicebanks, artistas e iniciativas abertas de vocal synth."
-pubDate: 2026-10-20
+pubDate: 2026-10-14T13:21:00-04:00
 tags: ["Vocal Synth Brasil", "Comunidade", "Projetos brasileiros"]
 category: "Comunidade"
 section: "comunidade"
-author: "VIVA Open Synth Brasil"
+author: "xiao"
+authorUrl: "https://vsynthbr.fandom.com/pt-br/wiki/Categoria:Xiaop"
+heroImage: "/images/articles/community.svg"
+heroAlt: "Rede conceitual com artistas, desenvolvedores, guias e vozes"
+heroCaption: "A cena brasileira se fortalece quando artistas, desenvolvedores, autores e pessoas que gravam vozes compartilham conhecimento."
+heroCredit: "Composição original do VIVA Open Synth Brasil"
+heroLicense: "Uso livre no contexto do VIVA"
 draft: false
 ---
 
@@ -28,3 +34,13 @@ Você pode contribuir de várias maneiras: escrever uma correção, compartilhar
 Se enviar uma sugestão ao VIVA, inclua o nome do projeto, o link oficial, a licença quando estiver disponível e uma descrição curta. Assim conseguimos publicar uma referência mais útil e reduzir o risco de divulgar informação desatualizada.
 
 Comunidade também é infraestrutura. Cada explicação clara diminui a distância entre a curiosidade de alguém e a primeira música criada com uma ferramenta aberta.
+
+## Onde a comunidade se encontra
+
+A [Wiki VocalSynth Brasil](https://vsynthbr.fandom.com/pt-br/wiki/Vocal_Synth_Brasil_Wiki) funciona como um catálogo colaborativo de voicebanks, personagens, canções e projetos em português. Ela é útil para descobrir referências, mas as páginas oficiais de cada projeto continuam sendo a melhor fonte para releases, licenças e arquivos atualizados.
+
+Também existem espaços de conversa, como a [Mansão UTAU Brasil](https://disboard.org/pt-br/server/1386444730652688524). Servidores e grupos ajudam a resolver problemas que nem sempre aparecem na documentação, especialmente quando alguém precisa comparar phonemizers, interpretar um erro de renderização ou escolher uma reclist.
+
+Ao indicar um projeto para o VIVA, envie o nome, o link oficial, a licença disponível, o sistema compatível e uma descrição curta do que ele oferece. Se for um voicebank, informe também o idioma, o método de gravação e quem forneceu a voz. Esses dados tornam a referência útil e evitam que uma página comunitária substitua a autoria original.
+
+Este texto também foi ampliado com ideias adaptadas e reescritas da [Megathread UTAU](https://docs.google.com/document/d/1QmiwhNqtCdWP8eV8fQVX9UG49et0o1WITPz158wURdA/edit?tab=t.0#heading=h.p6lry6ir49g6), mantida pela VocalSynth Brasil.

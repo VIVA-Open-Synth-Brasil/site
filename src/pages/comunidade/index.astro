@@ -1,4 +1,35 @@
 ---
-import SectionIndex from '../../components/SectionIndex.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const communities = [
+  { title: 'Wiki VocalSynth Brasil', category: 'Referência comunitária', text: 'Wiki colaborativa com informações sobre voicebanks, personagens, canções e projetos de síntese vocal.', href: 'https://vsynthbr.fandom.com/pt-br/wiki/Vocal_Synth_Brasil_Wiki', label: 'Abrir wiki' },
+  { title: 'Mansão UTAU Brasil', category: 'Discord', text: 'Espaço brasileiro para conversar, pedir ajuda, compartilhar trabalhos e aprender sobre UTAU e vocal synth.', href: 'https://disboard.org/pt-br/server/1386444730652688524', label: 'Visitar servidor' },
+  { title: 'Floploids LTDA', category: 'Comunidade', text: 'Espaço apresentado por Paulo4.21 para acompanhar iniciativas e materiais relacionados a vocal synth.', href: 'https://tr.ee/oeXX0pee3Q', label: 'Conhecer projeto' },
+  { title: 'Studio Pomar', category: 'Estúdio e desenvolvimento', text: 'Estúdio responsável pelo VIVA, com foco em tecnologia experimental, arte e ferramentas abertas.', href: 'https://studiopomar.github.io/', label: 'Visitar Studio Pomar' },
+  { title: 'Produtores brasileiros', category: 'Diretório', text: 'Categoria da Wiki VocalSynth Brasil dedicada a produtores e pessoas que criam música com síntese vocal.', href: 'https://vsynthbr.fandom.com/pt-br/wiki/Categoria:Produtores', label: 'Ver produtores' },
+  { title: 'UADX UTAU Retombado', category: 'Projeto e comunidade', text: 'Projeto comunitário dedicado a reunir referências e materiais do universo UTAU.', href: 'https://sites.google.com/view/utauretombado/', label: 'Abrir projeto' },
+  { title: 'Megathread UTAU Brasil', category: 'Guia comunitário', text: 'Glossário, tutoriais, downloads, voicebanks, OTO.INI, phonemizers e referências para começar.', href: 'https://docs.google.com/document/d/1QmiwhNqtCdWP8eV8fQVX9UG49et0o1WITPz158wURdA/edit?usp=sharing', label: 'Abrir megathread' },
+  { title: 'Utaurials', category: 'Tutoriais', text: 'Arquivo de tutoriais e materiais de apoio para aprender sobre UTAU e seus fluxos de criação.', href: 'https://utaurials.wordpress.com/', label: 'Ler tutoriais' }
+];
 ---
-<SectionIndex section="comunidade" title="Comunidade" description="Projetos, artistas, desenvolvedores e iniciativas brasileiras de vocal synth." />
+<BaseLayout title="Comunidade · VIVA Open Synth Brasil" description="Comunidades, diretórios, projetos e referências brasileiras de UTAU e síntese vocal.">
+  <div class="container page-head">
+    <span class="eyebrow">Rede brasileira / comunidade</span>
+    <h1>Comunidade</h1>
+    <p>Espaços para encontrar pessoas, aprender, compartilhar projetos e manter viva a documentação brasileira de vocal synth.</p>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="resource-grid community-directory">
+        {communities.map((item) => (
+          <article class="resource community-card">
+            <span class="eyebrow">{item.category}</span>
+            <h2>{item.title}</h2>
+            <p>{item.text}</p>
+            <a href={item.href} target="_blank" rel="noopener noreferrer">{item.label} ↗</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,11 @@
+---
+interface Props { eyebrow?: string; title: string; href?: string; linkLabel?: string; }
+const { eyebrow, title, href, linkLabel } = Astro.props;
+---
+<section class="dashboard-panel">
+  <header class="panel-header">
+    <div>{eyebrow && <span class="eyebrow">{eyebrow}</span>}<h2>{title}</h2></div>
+    {href && <a class="panel-link" data-astro-prefetch="hover" href={href}>{linkLabel || 'Abrir seção'} <span aria-hidden="true">↗</span></a>}
+  </header>
+  <slot />
+</section>

@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedPosts, tagToSlug } from '../../utils/content';
+
+const posts = await getPublishedPosts();
+const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort((a, b) => a.localeCompare(b, 'pt-BR'));
+---
+<BaseLayout title="Tags · VIVA Open Synth Brasil" description="Explore os artigos do VIVA Open Synth Brasil por tags e assuntos.">
+  <div class="container page-head">
+    <span class="eyebrow">Índice editorial</span>
+    <h1>Tags</h1>
+    <p>Escolha um assunto para encontrar artigos relacionados, ferramentas e projetos.</p>
+  </div>
+  <section class="section">
+    <div class="container tag-index" aria-label="Todas as tags">
+      {tags.map((tag) => <a class="tag tag-index-link" href={`/tags/${tagToSlug(tag)}/`}>{tag}<span aria-hidden="true"> ↗</span></a>)}
+    </div>
+  </section>
+</BaseLayout>

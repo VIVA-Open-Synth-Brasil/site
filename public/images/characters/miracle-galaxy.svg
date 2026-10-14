@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:viva="https://viva-open-synth-brasil.pages.dev/ns" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <metadata><viva:author>xiao</viva:author></metadata>
+  <title id="title">Miracle Galaxy em versão vetorial fofa</title>
+  <desc id="desc">Personagem de cabelo branco, moletom roxo e cachecol galáctico com estrelas.</desc>
+  <!-- Adaptação vetorial original do VIVA baseada na referência visual fornecida. -->
+  <defs>
+    <linearGradient id="violet" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#b98be8"/><stop offset="1" stop-color="#603f9d"/></linearGradient>
+    <linearGradient id="scarf" x1="0" x2="1"><stop stop-color="#6d4aa9"/><stop offset=".5" stop-color="#d19be9"/><stop offset="1" stop-color="#7344aa"/></linearGradient>
+    <linearGradient id="skin" x1="0" x2="1"><stop stop-color="#f3c7bb"/><stop offset="1" stop-color="#c78d91"/></linearGradient>
+  </defs>
+  <g stroke="#33274d" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M202 119c-4-23 8-51 38-58 36-8 64 17 66 54l-8 51h-84z" fill="url(#skin)" stroke-width="6"/>
+    <path d="M195 122c-17-26-6-69 31-79 28-8 65 7 76 36l-16 16-18-24c-17 19-42 24-67 18l-1 42z" fill="#f2f3ff" stroke-width="7"/>
+    <path d="M206 101c16-18 28-25 48-34l28 28-18 8-19 27-14-21z" fill="#bca9ed" stroke-width="4"/>
+    <path d="M211 76c9-10 20-16 32-19M267 69c10 5 17 12 22 22M216 92l-8 17M286 86l7 16" fill="none" stroke="#d9d8f2" stroke-width="3" opacity=".9"/>
+    <path d="M248 119c6 3 12 3 18 0" fill="none" stroke-width="4"/>
+    <circle cx="230" cy="109" r="4" fill="#3c355f" stroke="none"/><circle cx="272" cy="109" r="4" fill="#3c355f" stroke="none"/>
+    <path d="M202 155c-22 17-25 39-13 58 16 26 39 35 67 35s52-8 68-35c11-19 7-42-14-58-15 17-39 25-55 25s-40-8-53-25z" fill="url(#scarf)" stroke-width="7"/>
+    <path d="M214 202c-9 35-16 72-11 104l31 17 33-20 32 20 29-18c3-36-4-71-14-103-20 20-73 20-100 0z" fill="url(#violet)" stroke-width="7"/>
+    <path d="M226 229c19 10 48 10 70 0M226 252c20 9 48 9 69 0M239 281h52" fill="none" stroke="#8f6bc2" stroke-width="3" opacity=".75"/>
+    <path d="M237 278c15 9 33 9 49 0l10 25-35 15-35-15z" fill="#7550a7" stroke-width="4"/>
+    <path d="M235 317h71l12 116-39 25-52-25z" fill="#292644" stroke-width="7"/>
+    <path d="M271 327v112M244 348l22 7M278 355l23-7M243 390l24 7M279 397l24-7" fill="none" stroke="#51476d" stroke-width="3"/>
+    <path d="M234 435l-4 33 35 8 19-34-19-13zM307 435l5 33-35 8-18-34 19-13z" fill="#332c59" stroke-width="7"/>
+    <path d="M257 164l-9 27 17 10 17-10-9-27" fill="#f9dc62" stroke-width="4"/>
+    <path d="M226 286l13-15 13 15 13-15 13 15" fill="none" stroke="#edcf62" stroke-width="4"/>
+    <path d="M94 48l7 17 18 2-14 12 4 18-15-10-16 9 5-18-14-12 18-1zM407 79l6 14 15 2-11 10 3 15-13-8-13 8 4-15-12-10 15-1z" fill="#ffe27a" stroke="#9c6e3c" stroke-width="4"/>
+  </g>
+</svg>

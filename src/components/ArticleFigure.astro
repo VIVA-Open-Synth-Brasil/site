@@ -1,0 +1,24 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  caption: string;
+  source?: string;
+  credit?: string;
+  license?: string;
+  loading?: 'eager' | 'lazy';
+}
+
+const { src, alt, caption, source, credit, license, loading = 'eager' } = Astro.props;
+---
+<figure class="article-figure">
+  <div class="article-figure-frame">
+    <img src={src} alt={alt} loading={loading} decoding="async" />
+  </div>
+  <figcaption>
+    <span>{caption}</span>
+    {credit && <span class="figure-credit">Crédito: {credit}.</span>}
+    {license && <span class="figure-license">{license}.</span>}
+    {source && <a href={source} target="_blank" rel="noopener noreferrer">Ver fonte e referência ↗</a>}
+  </figcaption>
+</figure>

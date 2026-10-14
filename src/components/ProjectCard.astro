@@ -1,0 +1,9 @@
+---
+import Badge from './Badge.astro';
+interface Props { name: string; kind: string; slug: string; url: string; image: string; imageAlt: string; imageSource: string; imageCredit: string; imageFit?: string; status?: string; }
+const { name, kind, slug, url, image, imageAlt, imageSource, imageCredit, imageFit, status = 'monitoring' } = Astro.props;
+---
+<article class="dashboard-project-card">
+  <div class="project-image"><img class:list={{ contain: imageFit === 'contain' }} src={image} alt={imageAlt} loading="lazy" /><span>Imagem: <a href={imageSource} target="_blank" rel="noopener noreferrer">{imageCredit}</a></span></div>
+  <div class="project-card-body"><div class="dashboard-card-top"><span class="eyebrow"><img class="inline-icon" src="/icons/flaticon/folder.svg" alt="" aria-hidden="true" />projeto / acompanhado</span><Badge tone="green">{status === 'monitoring' ? 'acompanhando' : status}</Badge></div><h3><a data-astro-prefetch="hover" href={`/projetos/${slug}/`}>{name}</a></h3><p>{kind}</p><a class="card-action" href={url} target="_blank" rel="noopener noreferrer">Site ou repositório <span aria-hidden="true">↗</span></a></div>
+</article>

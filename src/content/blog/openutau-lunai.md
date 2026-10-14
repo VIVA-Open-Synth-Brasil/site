@@ -1,11 +1,18 @@
 ---
 title: "OpenUtau Lunai: um fork voltado ao DiffSinger"
 description: "Conheça o OpenUtau Lunai, fork do OpenUtau que concentra recursos para trabalhar com cantores e modelos DiffSinger."
-pubDate: 2026-10-21
+pubDate: 2026-09-16T08:49:00-04:00
 tags: ["OpenUtau Lunai", "DiffSinger", "Fork"]
 category: "Projetos"
 section: "enciclopedia"
-author: "VIVA Open Synth Brasil"
+author: "xiao"
+authorUrl: "https://vsynthbr.fandom.com/pt-br/wiki/Categoria:Xiaop"
+heroImage: "/images/articles/lunai.svg"
+heroAlt: "Diagrama do OpenUtau Lunai com editor, Singer Hub e renderização"
+heroCaption: "O Lunai é apresentado aqui como uma combinação de editor, descoberta de cantores e renderização."
+heroSource: "https://github.com/keirokeer/OpenUtau-lunai"
+heroCredit: "Diagrama original do VIVA; referência do projeto OpenUtau Lunai"
+heroLicense: "Diagrama original do VIVA"
 draft: false
 ---
 
@@ -27,7 +34,7 @@ O próprio ecossistema LUNAI deve ser lido como uma combinação entre editor, c
 
 O Lunai é interessante para usuários que trabalham principalmente com DiffSinger, para quem deseja testar ferramentas mais orientadas a esse fluxo e para criadores que alternam entre voicebanks tradicionais e modelos neurais. Ele também pode ser uma forma prática de conhecer recursos que ainda não chegaram ao OpenUtau principal.
 
-O projeto publica versões para Windows, macOS e Linux, com atualizações pelo próprio aplicativo segundo o repositório. Antes de escolher uma versão, leia as releases e a documentação correspondente ao seu sistema.
+O projeto publica versões para [Windows](https://pt.wikipedia.org/wiki/Microsoft_Windows), [macOS](https://pt.wikipedia.org/wiki/MacOS) e [Linux](https://pt.wikipedia.org/wiki/Linux), com atualizações pelo próprio aplicativo segundo o repositório. Antes de escolher uma versão, leia as releases e a documentação correspondente ao seu sistema.
 
 ## Um teste honesto
 

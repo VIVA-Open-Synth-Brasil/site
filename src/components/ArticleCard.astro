@@ -1,0 +1,14 @@
+---
+import Badge from './Badge.astro';
+import { formatDate } from '../utils/content';
+interface Props { title: string; description: string; slug: string; category: string; pubDate: Date; image?: string; imageAlt?: string; href?: string; status?: string; }
+const { title, description, slug, category, pubDate, image, imageAlt = title, href = `/artigos/${slug}/`, status = 'atualizado' } = Astro.props;
+---
+<article class="dashboard-article-card">
+  {image && <a class="dashboard-card-image" data-astro-prefetch="hover" href={href} aria-label={`Abrir ${title}`}><img src={image} alt={imageAlt} loading="lazy" /></a>}
+  <div class="dashboard-card-top"><span class="eyebrow"><img class="inline-icon" src="/icons/flaticon/book.svg" alt="" aria-hidden="true" />{category}</span><Badge tone="blue">{status}</Badge></div>
+  <p class="dashboard-date">{formatDate(pubDate)}</p>
+  <h3><a data-astro-prefetch="hover" href={href}>{title}</a></h3>
+  <p>{description}</p>
+  <a class="card-action" data-astro-prefetch="hover" href={href}>Ler artigo <span aria-hidden="true">↗</span></a>
+</article>

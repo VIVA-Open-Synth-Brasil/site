@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:viva="https://viva-open-synth-brasil.pages.dev/ns" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <metadata><viva:author>xiao</viva:author></metadata>
+  <title id="title">Fluxo de um vocal synth</title><desc id="desc">Notas e texto passam por fonemas e um voicebank até virar áudio.</desc>
+  <rect width="1200" height="650" fill="#dfe7e2"/><rect x="38" y="38" width="1124" height="574" rx="28" fill="#29423b"/>
+  <text x="82" y="112" fill="#c9f0d8" font-family="monospace" font-size="28">viva://concepts/vocal-synth</text>
+  <text x="82" y="178" fill="#fff" font-family="sans-serif" font-size="52" font-weight="700">Do texto ao áudio</text>
+  <g font-family="monospace" font-size="25" text-anchor="middle">
+    <g fill="#d5e0d9"><rect x="90" y="270" width="190" height="120" rx="16"/><rect x="335" y="270" width="190" height="120" rx="16"/></g>
+    <rect x="580" y="270" width="190" height="120" rx="16" fill="#ef78ae"/><rect x="825" y="270" width="250" height="120" rx="16" fill="#67b8d6"/>
+    <text x="185" y="318" fill="#20332e">notas</text><text x="185" y="352" fill="#20332e">+ letra</text>
+    <text x="430" y="318" fill="#20332e">fonemas</text><text x="430" y="352" fill="#20332e">pronúncia</text>
+    <text x="675" y="318" fill="#20332e">voicebank</text><text x="675" y="352" fill="#20332e">ou modelo</text>
+    <text x="950" y="318" fill="#20332e">render</text><text x="950" y="352" fill="#20332e">→ áudio</text>
+  </g>
+  <g stroke="#c9f0d8" stroke-width="8" fill="none" stroke-linecap="round"><path d="M290 330h35m210 0h35m210 0h35"/><path d="m313 314 18 16-18 16m245-16 18 16-18 16m245-16 18 16-18 16"/></g>
+  <text x="82" y="540" fill="#b9d9c5" font-family="monospace" font-size="22">diagrama original do VIVA Open Synth Brasil</text>
+</svg>

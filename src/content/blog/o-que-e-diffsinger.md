@@ -1,10 +1,17 @@
 ---
 title: "O que é DiffSinger? Uma introdução à síntese neural cantada"
 description: "Uma explicação acessível sobre modelos, dados e o lugar do DiffSinger no ecossistema de síntese vocal."
-pubDate: 2026-10-13
+pubDate: 2026-09-02T14:26:00-04:00
 tags: ["DiffSinger", "Síntese neural", "Tecnologia"]
 category: "Notícias"
-author: "VIVA Open Synth Brasil"
+author: "xiao"
+authorUrl: "https://vsynthbr.fandom.com/pt-br/wiki/Categoria:Xiaop"
+heroImage: "/images/articles/diffsinger.svg"
+heroAlt: "Pipeline conceitual do DiffSinger com letra, melodia, modelo e vocoder"
+heroCaption: "No DiffSinger, letra e dados musicais condicionam uma cadeia de modelos que produz áudio."
+heroSource: "https://github.com/MoonInTheRiver/DiffSinger"
+heroCredit: "Diagrama original do VIVA; referência do projeto DiffSinger"
+heroLicense: "Diagrama original do VIVA"
 draft: false
 ---
 
@@ -20,9 +27,9 @@ Isso muda o tipo de problema que aparece. Em vez de apenas perguntar se a amostr
 
 ## Por que há tanto interesse
 
-Modelos neurais podem produzir transições mais contínuas e lidar com relações complexas entre timbre, pitch e articulação. Eles também tornam possível experimentar vozes que não seriam fáceis de organizar como um banco tradicional.
+Modelos de [redes neurais artificiais](https://pt.wikipedia.org/wiki/Redes_neurais_artificiais) podem produzir transições mais contínuas e lidar com relações complexas entre timbre, pitch e articulação. Eles também tornam possível experimentar vozes que não seriam fáceis de organizar como um banco tradicional.
 
-Ao mesmo tempo, o caminho é mais pesado. Treinamento exige dados, processamento e conhecimento técnico. Mesmo a inferência pode depender de modelos grandes, bibliotecas específicas e aceleração por hardware.
+Ao mesmo tempo, o caminho é mais pesado. Treinamento exige dados, processamento e conhecimento técnico. Mesmo a inferência pode depender de modelos grandes, bibliotecas específicas e aceleração por [hardware](https://pt.wikipedia.org/wiki/Hardware).
 
 ## Um bom jeito de estudar
 

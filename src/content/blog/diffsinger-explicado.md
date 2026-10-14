@@ -1,11 +1,18 @@
 ---
 title: "DiffSinger explicado: modelos, vozes e funcionamento"
 description: "Uma introdução clara ao DiffSinger, seus modelos, dados de voz e diferenças em relação aos bancos UTAU tradicionais."
-pubDate: 2026-10-18
+pubDate: 2026-08-03T10:18:00-04:00
 tags: ["DiffSinger", "Modelos neurais", "Síntese vocal"]
 category: "Enciclopédia"
 section: "enciclopedia"
-author: "VIVA Open Synth Brasil"
+author: "xiao"
+authorUrl: "https://vsynthbr.fandom.com/pt-br/wiki/Categoria:Xiaop"
+heroImage: "/images/articles/diffsinger-explained.svg"
+heroAlt: "Diagrama que relaciona dados musicais, espectrograma mel e vocoder"
+heroCaption: "Representações intermediárias ajudam a entender como uma cadeia neural chega à forma de onda."
+heroSource: "https://github.com/MoonInTheRiver/DiffSinger"
+heroCredit: "Diagrama original do VIVA; referência do projeto DiffSinger"
+heroLicense: "Diagrama original do VIVA"
 draft: false
 ---
 
@@ -15,7 +22,7 @@ O nome pode assustar, mas a pergunta prática é simples: como passar de uma let
 
 ## O caminho do dado até o áudio
 
-Em um fluxo DiffSinger, a letra é convertida em uma representação de fonemas. A música fornece notas e, dependendo da configuração, informações de pitch ou MIDI. O modelo produz um espectrograma mel, uma representação visual das frequências ao longo do tempo. Por fim, um vocoder converte esse espectrograma em uma onda de áudio.
+Em um fluxo DiffSinger, a letra é convertida em uma representação de [fonemas](https://pt.wikipedia.org/wiki/Fonema). A música fornece notas e, dependendo da configuração, informações de pitch ou [MIDI](https://pt.wikipedia.org/wiki/MIDI). O modelo produz um [espectrograma](https://pt.wikipedia.org/wiki/Espectrograma) mel, uma representação visual das frequências ao longo do tempo. Por fim, um [vocoder](https://pt.wikipedia.org/wiki/Vocoder) converte esse espectrograma em uma onda de áudio.
 
 O repositório oficial descreve diferentes configurações do pipeline, incluindo versões que recebem `Lyric + F0`, versões que usam `Lyric + MIDI` e vocoders como NSF-HiFiGAN. Isso explica por que não basta baixar um único arquivo e esperar que qualquer cantor DiffSinger funcione em qualquer editor.
 
@@ -33,7 +40,7 @@ Isso ajuda a entender uma diferença importante: o resultado não é apenas uma 
 
 ## O que é necessário para criar um cantor
 
-Um projeto de treinamento precisa de gravações cantadas consistentes, transcrições ou labels, informações de pitch, configurações e recursos computacionais. Ruído, reverberação e erros de anotação podem aparecer no resultado final. A voz também precisa ser usada com consentimento e com uma licença que deixe claro o que pode ser feito com o modelo.
+Um projeto de treinamento precisa de gravações cantadas consistentes, transcrições ou labels, informações de pitch, configurações e recursos computacionais. Ruído, reverberação e erros de anotação podem aparecer no resultado final. A voz também precisa ser usada com consentimento e com uma licença que deixe claro o que pode ser feito com o modelo. Para saber mais sobre [licenças de software livre](https://pt.wikipedia.org/wiki/Licença_de_software_livre), vale começar pelas permissões e restrições do próprio repositório.
 
 Para quem está começando, é mais realista usar um cantor publicado e aprender o fluxo de inferência antes de tentar treinar um modelo. O [código oficial do DiffSinger](https://github.com/MoonInTheRiver/DiffSinger) e a documentação de cada projeto de voicebank são pontos de partida melhores do que copiar comandos de um tutorial antigo.
 

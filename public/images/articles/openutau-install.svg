@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:viva="https://viva-open-synth-brasil.pages.dev/ns" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <metadata><viva:author>xiao</viva:author></metadata>
+  <title id="title">Instalação do OpenUtau</title><desc id="desc">Um mapa de instalação mostra os caminhos para Windows, macOS e Linux.</desc>
+  <rect width="1200" height="650" fill="#dfe7e2"/><rect x="48" y="48" width="1104" height="554" rx="25" fill="#29423b"/>
+  <text x="90" y="125" fill="#c9f0d8" font-family="monospace" font-size="26">viva://getting-started/openutau</text><text x="90" y="195" fill="#fff" font-family="sans-serif" font-size="50" font-weight="700">Instalar → preparar → cantar</text>
+  <g font-family="monospace" text-anchor="middle"><rect x="105" y="280" width="260" height="150" rx="18" fill="#d5e0d9"/><rect x="470" y="280" width="260" height="150" rx="18" fill="#ef78ae"/><rect x="835" y="280" width="260" height="150" rx="18" fill="#67b8d6"/><text x="235" y="340" fill="#20332e" font-size="28">01 · baixar</text><text x="235" y="380" fill="#20332e" font-size="20">release confiável</text><text x="600" y="340" fill="#20332e" font-size="28">02 · instalar</text><text x="600" y="380" fill="#20332e" font-size="20">app + runtime</text><text x="965" y="340" fill="#20332e" font-size="28">03 · testar</text><text x="965" y="380" fill="#20332e" font-size="20">projeto curto</text></g>
+  <path d="M370 355h80m280 0h80" stroke="#c9f0d8" stroke-width="8" stroke-linecap="round"/><text x="90" y="535" fill="#b9d9c5" font-family="monospace" font-size="21">diagrama original do VIVA • instalação: wiki oficial do OpenUtau</text>
+</svg>

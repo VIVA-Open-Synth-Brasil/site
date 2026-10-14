@@ -1,0 +1,24 @@
+---
+interface Props { compact?: boolean; }
+const { compact = false } = Astro.props;
+---
+<aside class:list={{ 'context-panel': true, 'context-panel-compact': compact }} aria-label="Comece aqui">
+  <div class="context-panel-inner">
+    <span class="eyebrow">comece / aqui</span>
+    <h2>Comece aqui</h2>
+    <p>Um mapa rápido para entrar no universo de vocal synth e síntese vocal aberta.</p>
+    <form class="context-search" action="/buscar/" method="get" role="search">
+      <label class="sr-only" for="context-search">Buscar artigos</label>
+      <input id="context-search" name="q" type="search" placeholder="Buscar artigos" />
+      <button type="submit" aria-label="Buscar">⌕</button>
+    </form>
+    <nav class="context-links" aria-label="Atalhos para começar">
+      <a data-astro-prefetch="hover" href="/projetos/openutau/"><img src="/icons/flaticon/audio-waves.svg" alt="" aria-hidden="true" /><strong>OpenUtau</strong><span>Comece a editar vozes</span></a>
+      <a data-astro-prefetch="hover" href="/projetos/diffsinger/"><img src="/icons/flaticon/audio-waves.svg" alt="" aria-hidden="true" /><strong>DiffSinger</strong><span>Conheça a síntese neural</span></a>
+      <a data-astro-prefetch="hover" href="/recursos/megathread-utau/"><img src="/icons/flaticon/book.svg" alt="" aria-hidden="true" /><strong>Megathread UTAU</strong><span>Guia comunitário brasileiro</span></a>
+      <a data-astro-prefetch="hover" href="/artigos/o-que-e-vocal-synth/"><img src="/icons/flaticon/book.svg" alt="" aria-hidden="true" /><strong>O que é vocal synth?</strong><span>Introdução para iniciantes</span></a>
+      <a data-astro-prefetch="hover" href="/recursos/"><img src="/icons/flaticon/folder.svg" alt="" aria-hidden="true" /><strong>Recursos</strong><span>Materiais e referências</span></a>
+    </nav>
+    <div class="context-note"><span class="status-badge status-blue"><i aria-hidden="true"></i> guia da comunidade</span><p>Leia, experimente e compartilhe ferramentas abertas.</p></div>
+  </div>
+</aside>

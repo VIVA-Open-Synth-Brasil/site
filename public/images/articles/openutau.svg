@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:viva="https://viva-open-synth-brasil.pages.dev/ns" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <metadata><viva:author>xiao</viva:author></metadata>
+  <title id="title">Interface conceitual do OpenUtau</title><desc id="desc">Um piano roll com notas e curvas de expressão representa o fluxo de edição do OpenUtau.</desc>
+  <rect width="1200" height="650" fill="#dfe7e2"/><rect x="42" y="42" width="1116" height="566" rx="22" fill="#f7f8f3" stroke="#b8c9c0" stroke-width="4"/>
+  <rect x="42" y="42" width="1116" height="70" rx="22" fill="#29423b"/><circle cx="78" cy="77" r="9" fill="#f0784b"/><circle cx="110" cy="77" r="9" fill="#ef78ae"/><circle cx="142" cy="77" r="9" fill="#67b8d6"/><text x="184" y="86" fill="#c9f0d8" font-family="monospace" font-size="24">OpenUtau / project.ustx</text>
+  <g stroke="#b8c9c0" stroke-width="2"><path d="M140 188h950M140 238h950M140 288h950M140 338h950M140 388h950M140 438h950"/><path d="M240 158v310M340 158v310M440 158v310M540 158v310M640 158v310M740 158v310M840 158v310M940 158v310M1040 158v310"/></g>
+  <g fill="#166b59"><rect x="180" y="208" width="78" height="27" rx="7"/><rect x="280" y="258" width="100" height="27" rx="7"/><rect x="410" y="308" width="90" height="27" rx="7"/><rect x="530" y="258" width="82" height="27" rx="7"/><rect x="650" y="208" width="105" height="27" rx="7"/><rect x="800" y="358" width="93" height="27" rx="7"/></g>
+  <path d="M145 520 C260 470 310 560 430 505 S650 490 760 530 S950 470 1080 520" fill="none" stroke="#ef78ae" stroke-width="7"/>
+  <text x="82" y="570" fill="#5b7069" font-family="monospace" font-size="22">diagrama original do VIVA • referência: github.com/stakira/OpenUtau</text>
+</svg>

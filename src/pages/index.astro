@@ -1,14 +1,31 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import SectionPanel from '../components/SectionPanel.astro';
 import { technologies } from '../data/site';
-import { getPublishedPosts, formatDate } from '../utils/content';
+import { getPublishedPosts } from '../utils/content';
 const posts = await getPublishedPosts();
 const [featured, ...latest] = posts;
 ---
 <BaseLayout title="VIVA Open Synth Brasil | Vocal Synth e Síntese Vocal" description="Comunidade brasileira de vocal synth e síntese vocal de código aberto. Descubra ferramentas, voicebanks, tutoriais, OpenUtau, UTAU e DiffSinger.">
-  <section class="hero"><div class="container"><span class="eyebrow">Voz · Inovação · Virtualidade · Arte</span><h1>Vocal Synth e Síntese Vocal de Código Aberto no Brasil</h1><p>Comunidade brasileira de síntese vocal e software livre: notícias, recursos e conversas sobre canto digital e as ferramentas que colocam a criação nas mãos de todo mundo.</p><p class="brand-note"><span aria-hidden="true">$</span> VIVA ::: · mantendo vivas as vozes da comunidade</p><a class="button" href="/artigos/">Explorar artigos <span aria-hidden="true">↗</span></a></div></section>
-  {featured && <section class="section"><div class="container feature"><div class="feature-art" aria-label="Ilustração abstrata de ondas sonoras">∿</div><div><span class="eyebrow">Em destaque · {featured.data.category}</span><h2>{featured.data.title}</h2><p>{featured.data.description}</p><p class="meta">{formatDate(featured.data.pubDate)}</p><a class="button" href={`/artigos/${featured.slug}/`}>Ler matéria</a></div></div></section>}
-  <section class="section"><div class="container"><div class="section-header"><h2>Mais recente</h2><a href="/artigos/">Ver todos os artigos →</a></div><div class="post-grid">{latest.slice(0,3).map((post) => <article class="post-card"><div class="card-art"><span class="eyebrow">{post.data.category}</span></div><div class="card-body"><span class="meta">{formatDate(post.data.pubDate)}</span><h3><a href={`/artigos/${post.slug}/`}>{post.data.title}</a></h3><p>{post.data.description}</p><a class="read-more" href={`/artigos/${post.slug}/`}>Continuar lendo →</a></div></article>)}</div></div></section>
-  <section class="section"><div class="container"><div class="section-header"><h2>O que estamos acompanhando</h2><a href="/projetos/">Conhecer projetos →</a></div><div class="tech-grid">{technologies.map((tech) => <a class="tech" href={`/projetos/${tech.slug}/`}><strong>{tech.name}</strong><small>{tech.kind}</small></a>)}</div></div></section>
+  <section class="dashboard-welcome">
+    <div class="container">
+      <div class="welcome-copy">
+        <span class="eyebrow">viva / open synth brasil</span>
+        <h1>Um espaço para vozes abertas.</h1>
+        <p>Notícias, recursos e conversas sobre síntese vocal, software livre e as pessoas que mantêm esse ecossistema em movimento.</p>
+        <div class="welcome-line"><span class="status-badge status-green"><i aria-hidden="true"></i> comunidade online</span><span class="meta">Voz · Inovação · Virtualidade · Arte</span></div>
+      </div>
+      <div class="welcome-terminal" aria-label="Status do VIVA">
+        <div class="terminal-bar"><span></span><span></span><span></span><small>viva://espaço-de-trabalho</small></div>
+        <div class="terminal-body"><p><span class="terminal-prompt">$</span> abrindo biblioteca de síntese vocal</p><div class="waveform" aria-hidden="true">{Array.from({ length: 28 }).map(() => <i></i>)}</div><div class="terminal-list"><span>PROJETOS</span><b>{technologies.length} acompanhados</b><span>ARTIGOS</span><b>{posts.length} publicados</b><span>STATUS</span><b>online</b></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="dashboard-metrics" aria-label="Indicadores do VIVA"><div class="container"><div class="metric-card"><span class="eyebrow">projetos</span><strong>{technologies.length}</strong><span>acompanhados</span></div><div class="metric-card"><span class="eyebrow">artigos</span><strong>{posts.length}</strong><span>publicados</span></div><div class="metric-card"><span class="eyebrow">recursos</span><strong>05</strong><span>pontos de partida</span></div><div class="metric-card metric-active"><span class="eyebrow">comunidade</span><strong>online</strong><span>aberta para você</span></div></div></section>
+  {featured && <section class="section"><div class="container"><SectionPanel eyebrow="destaque / editorial" title="Em destaque" href={`/artigos/${featured.slug}/`} linkLabel="Abrir matéria"><div class="featured-dashboard"><a class="feature-art feature-art-image" data-astro-prefetch="hover" href={`/artigos/${featured.slug}/`} aria-label={`Abrir matéria: ${featured.data.title}`}><img src={featured.data.heroImage ?? '/og-default.svg'} alt={featured.data.heroAlt ?? featured.data.title} /></a><div><span class="eyebrow">{featured.data.category}</span><h3><a data-astro-prefetch="hover" href={`/artigos/${featured.slug}/`}>{featured.data.title}</a></h3><p>{featured.data.description}</p><span class="meta">{featured.data.pubDate.toLocaleDateString('pt-BR')}</span></div></div></SectionPanel></div></section>}
+  <section class="section"><div class="container"><SectionPanel eyebrow="publicações / recentes" title="Mais recente" href="/artigos/" linkLabel="Ver todos"><div class="dashboard-article-grid">{latest.slice(0, 3).map((post) => <ArticleCard title={post.data.title} description={post.data.description} slug={post.slug} category={post.data.category} pubDate={post.data.pubDate} image={post.data.heroImage} imageAlt={post.data.heroAlt} />)}</div></SectionPanel></div></section>
+  <section class="section"><div class="container"><SectionPanel eyebrow="projetos / acompanhados" title="Projetos acompanhados" href="/projetos/" linkLabel="Mapa completo"><div class="dashboard-project-grid">{technologies.map((tech) => <ProjectCard {...tech} />)}</div></SectionPanel></div></section>
 </BaseLayout>
 <script type="application/ld+json" set:html={JSON.stringify({ '@context':'https://schema.org', '@type':'WebSite', name:'VIVA Open Synth Brasil', description:'Comunidade brasileira de vocal synth e síntese vocal de código aberto.', url:'https://viva-open-synth-brasil.pages.dev' })} />

@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedPosts, tagToSlug } from '../../utils/content';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
+  return tags.map((tag) => ({ params: { tag: tagToSlug(tag) }, props: { tag, posts: posts.filter((post) => post.data.tags.includes(tag)) } }));
+}
+
+const { tag, posts } = Astro.props;
+---
+<BaseLayout title={`${tag} · Tags · VIVA Open Synth Brasil`} description={`Artigos do VIVA Open Synth Brasil sobre ${tag}.`}>
+  <div class="container page-head">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Início</a><span>/</span><a href="/tags/">Tags</a><span>/</span><span aria-current="page">{tag}</span></nav>
+    <span class="eyebrow">Tag / arquivo</span>
+    <h1>{tag}</h1>
+    <p>{posts.length} {posts.length === 1 ? 'artigo encontrado' : 'artigos encontrados'} nesta tag.</p>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="post-grid">
+        {posts.map((post) => <article class="post-card">
+          {post.data.heroImage && <a class="post-card-image" data-astro-prefetch="hover" href={`/artigos/${post.slug}/`} aria-label={`Abrir ${post.data.title}`}><img src={post.data.heroImage} alt={post.data.heroAlt ?? post.data.title} loading="lazy" /></a>}
+          <div class="card-body">
+            <span class="meta">{post.data.category}</span>
+            <h2><a data-astro-prefetch="hover" href={`/artigos/${post.slug}/`}>{post.data.title}</a></h2>
+            <p>{post.data.description}</p>
+            <nav class="card-tags" aria-label={`Tags de ${post.data.title}`}>{post.data.tags.map((item) => <a class="tag" href={`/tags/${tagToSlug(item)}/`}>{item}</a>)}</nav>
+            <a class="read-more" data-astro-prefetch="hover" href={`/artigos/${post.slug}/`}>Ler artigo →</a>
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
