@@ -4,7 +4,7 @@ description: "Conheça o OpenUtau e os conceitos essenciais para começar a expe
 pubDate: 2026-10-14
 tags: ["OpenUtau", "UTAU", "Guia"]
 category: "Guias"
-author: "Voz Livre Brasil"
+author: "VIVA Open Synth Brasil"
 draft: false
 ---
 

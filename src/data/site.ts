@@ -1,8 +1,8 @@
 export const SITE = {
-  name: 'Voz Livre Brasil',
-  shortName: 'Voz Livre',
+  name: 'VIVA ::: Open Synth Brasil',
+  shortName: 'VIVA',
   description: 'Notícias, recursos e conhecimento sobre software livre e síntese de voz.',
-  url: 'https://voz-livre-brasil.pages.dev',
+  url: 'https://viva-open-synth-brasil.pages.dev',
   locale: 'pt-BR'
 };
 

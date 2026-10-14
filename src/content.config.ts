@@ -9,7 +9,7 @@ const blog = defineCollection({
     updatedDate: z.coerce.date().optional(),
     tags: z.array(z.string()).default([]),
     category: z.enum(['Notícias', 'Guias', 'Recursos', 'Projetos']),
-    author: z.string().default('Voz Livre Brasil'),
+    author: z.string().default('VIVA Open Synth Brasil'),
     heroImage: z.string().optional(),
     draft: z.boolean().default(false)
   })

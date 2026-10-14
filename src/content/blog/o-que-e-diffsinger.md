@@ -4,7 +4,7 @@ description: "Uma explicação acessível sobre modelos, dados e o lugar do Diff
 pubDate: 2026-10-13
 tags: ["DiffSinger", "Síntese neural", "Tecnologia"]
 category: "Notícias"
-author: "Voz Livre Brasil"
+author: "VIVA Open Synth Brasil"
 draft: false
 ---
 
